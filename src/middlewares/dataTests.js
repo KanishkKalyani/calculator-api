@@ -2,7 +2,7 @@ exports.checkData = (req, res, next) => {
 	const { num1, num2 } = req.body;
 
 	if (num1 === undefined || num2 === undefined) {
-		return res.status(400).json({
+		return res.json({
 			status: `failure`,
 			message: `parameter not found`,
 		});
@@ -14,8 +14,8 @@ exports.checkData = (req, res, next) => {
 exports.checkRange = (req, res, next) => {
 	const { num1, num2 } = req.body;
 
-	if (num1 > 1000000 || num2 > 1000000) {
-		return res.status(200).json({
+	if (num1 >= 1000000 || num2 >= 1000000) {
+		return res.json({
 			status: `error`,
 			message: `Overflow`,
 		});
@@ -28,7 +28,7 @@ exports.checkType = (req, res, next) => {
 	const { num1, num2 } = req.body;
 
 	if (typeof num1 === "string" || typeof num2 === "string") {
-		return res.status(200).json({
+		return res.json({
 			status: `error`,
 			message: `invalid data types`,
 		});
