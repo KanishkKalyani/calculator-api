@@ -13,7 +13,7 @@ exports.subNum = (req, res) => {
 	const { num1, num2 } = req.body;
 
 	if (num1 < 1000000 || num2 < 1000000) {
-		res.status(422).json({
+		res.status(200).json({
 			status: `error`,
 			message: `Underflow`,
 		});
@@ -42,7 +42,7 @@ exports.divNum = (req, res) => {
 	const { num1, num2 } = req.body;
 
 	if (num2 === 0) {
-		res.status(422).json({
+		res.status(200).json({
 			status: `error`,
 			message: `Cannot divide by zero`,
 		});
