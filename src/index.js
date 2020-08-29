@@ -17,14 +17,17 @@ app.use(morgan("dev"));
 
 app.use("/", calcRoutes);
 
-app.set("view engine", "ejs");
+// app.set("view engine", "ejs");
 
+// app.get("/", (req, res) => {
+// 	res.render(`../src/views/view.ejs`);
+// });
+
+// app.use("*", (__, res) => {
+// 	res.render(`../src/views/pageNotFound.ejs`);
+// });
 app.get("/", (req, res) => {
-	res.render(`../src/views/view.ejs`);
-});
-
-app.use("*", (__, res) => {
-	res.render(`../src/views/pageNotFound.ejs`);
+	res.status(200).json({ message: "Hello world!" });
 });
 
 // here
