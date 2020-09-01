@@ -14,7 +14,7 @@ exports.checkData = (req, res, next) => {
 exports.checkRange = (req, res, next) => {
 	const { num1, num2 } = req.body;
 
-	if (num1 >= 1000000 || num2 >= 1000000) {
+	if (num1 > 1000000 || num2 > 1000000) {
 		return res.json({
 			status: `error`,
 			message: `Overflow`,

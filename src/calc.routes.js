@@ -6,6 +6,6 @@ const { checkData, checkType, checkRange } = require("./middlewares/dataTests");
 router.post("/add", checkType, checkRange, addNum);
 router.post("/sub", checkType, subNum);
 router.post("/multiply", checkType, checkRange, mulNum);
-router.post("/divide", checkType, divNum);
+router.post("/divide", divNum);
 
 module.exports = router;
