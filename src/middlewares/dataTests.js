@@ -17,7 +17,7 @@ exports.checkType = (req, res, next) => {
 	if (typeof num1 === "string" || typeof num2 === "string") {
 		return res.json({
 			status: `error`,
-			message: `Invalid data types`,
+			message: `invalid data types`,
 		});
 	}
 
