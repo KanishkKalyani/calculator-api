@@ -13,7 +13,7 @@ exports.addNum = (req, res) => {
 	return res.json({
 		status: `success`,
 		message: `the sum of given two numbers`,
-		result,
+		sum: result,
 	});
 };
 
@@ -37,7 +37,7 @@ exports.subNum = (req, res) => {
 	return res.json({
 		status: `success`,
 		message: `the difference of given two numbers`,
-		result,
+		sum: result,
 	});
 };
 
