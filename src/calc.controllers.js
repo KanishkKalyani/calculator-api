@@ -69,6 +69,7 @@ exports.divNum = (req, res) => {
 			message: `Cannot divide by zero`,
 		});
 	}
+	const result = num1 / num2;
 
 	if (result > 1000000) {
 		return res.json({
@@ -76,8 +77,6 @@ exports.divNum = (req, res) => {
 			message: `Overflow`,
 		});
 	}
-
-	const result = num1 / num2;
 
 	return res.json({
 		status: `success`,
