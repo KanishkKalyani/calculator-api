@@ -1,40 +1,62 @@
 exports.addNum = (req, res) => {
 	const { num1, num2 } = req.body;
 
-	const sum = num1 + num2;
-	res.json({
+	const result = num1 + num2;
+
+	if (result > 1000000) {
+		return res.json({
+			status: `error`,
+			message: `Overflow`,
+		});
+	}
+
+	return res.json({
 		status: `success`,
 		message: `the sum of given two numbers`,
-		sum,
+		result,
 	});
 };
 
 exports.subNum = (req, res) => {
 	const { num1, num2 } = req.body;
 
-	if (num1 < 1000000 || num2 < 1000000) {
+	const result = num1 - num2;
+
+	if (result > 1000000) {
+		return res.json({
+			status: `error`,
+			message: `Overflow`,
+		});
+	} else if (result < -1000000) {
 		return res.json({
 			status: `error`,
 			message: `Underflow`,
 		});
 	}
 
-	const sum = num1 - num2;
-	res.json({
+	return res.json({
 		status: `success`,
 		message: `the difference of given two numbers`,
-		sum,
+		result,
 	});
 };
 
 exports.mulNum = (req, res) => {
 	const { num1, num2 } = req.body;
 
-	const sum = num1 * num2;
-	res.json({
+	const result = num1 * num2;
+
+	if (result > 1000000) {
+		return res.json({
+			status: `error`,
+			message: `Overflow`,
+		});
+	}
+
+	return res.json({
 		status: `success`,
 		message: `The product of given numbers`,
-		sum,
+		result,
 	});
 };
 
@@ -48,11 +70,18 @@ exports.divNum = (req, res) => {
 		});
 	}
 
-	const sum = num1 / num2;
+	if (result > 1000000) {
+		return res.json({
+			status: `error`,
+			message: `Overflow`,
+		});
+	}
 
-	res.json({
+	const result = num1 / num2;
+
+	return res.json({
 		status: `success`,
 		message: `The division of given numbers`,
-		sum,
+		result,
 	});
 };

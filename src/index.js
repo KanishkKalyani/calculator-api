@@ -27,8 +27,8 @@ app.use("/", calcRoutes);
 // 	res.render(`../src/views/pageNotFound.ejs`);
 // });
 
-app.get("/", (req, res) => {
-	return res.status(200).json({ message: "Hello world!" });
+app.get("/", (__, res) => {
+	return res.send("Hello world!");
 });
 
 // here
