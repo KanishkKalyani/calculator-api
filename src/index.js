@@ -28,8 +28,7 @@ app.use("/", calcRoutes);
 // });
 
 app.get("/", (__, res) => {
-	res.writeHead(200, { "Content-type": "text/plain" });
-	res.end("Hello world!");
+	res.status(200).send("Hello world!");
 });
 
 // here
