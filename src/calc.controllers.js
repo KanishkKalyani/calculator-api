@@ -37,7 +37,7 @@ exports.subNum = (req, res) => {
 	return res.json({
 		status: `success`,
 		message: `the difference of given two numbers`,
-		sum: result,
+		difference: result,
 	});
 };
 
